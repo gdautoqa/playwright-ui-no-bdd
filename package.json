@@ -1,5 +1,5 @@
 {
-  "name": "playwright-boilerplate",
+  "name": "playwright-ui-no-bdd",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
   ],
   "author": "",
   "license": "MIT",
-  "description": "Playwright boilerplate for automation testing",
+  "description": "playwright-ui-no-bdd",
   "dependencies": {
     "axe-core": "^4.10.2",
     "axios": "^1.7.9",
