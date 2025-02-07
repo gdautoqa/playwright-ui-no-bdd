@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { FileDownloadPage } from '../pages/FileDownload.page';
+import { FileDownloadPage } from '../pages/fileDownloadPage';
 import fs from 'fs';
 import path from 'path';
 

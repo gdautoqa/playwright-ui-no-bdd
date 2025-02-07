@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { FileUploadPage } from '../pages/FileUpload.page';
+import { FileUploadPage } from '../pages/fileUploadPage';
 import path from 'path';
 
 test('File Upload Test', async ({ page }) => {

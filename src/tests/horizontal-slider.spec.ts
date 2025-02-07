@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import HorizontalSliderPage from '../pages/HorizontalSliders.page';
+import HorizontalSliderPage from '../pages/horizontalSlidersPage';
 
 test('Horizontal Slider Test', async ({ page }) => {
   const sliderPage = new HorizontalSliderPage(page);

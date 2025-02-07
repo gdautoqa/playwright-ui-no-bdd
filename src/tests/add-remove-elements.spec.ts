@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { AddRemoveElementsPage } from '../pages/AddRemoveElements.page';
+import { AddRemoveElementsPage } from '../pages/addRemoveElementsPage';
 
 test('Add and Remove Elements', async ({ page }) => {
   const addRemovePage = new AddRemoveElementsPage(page);

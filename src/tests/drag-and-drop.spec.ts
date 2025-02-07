@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { DragAndDropPage } from '../pages/DragAndDrop.page';
+import { DragAndDropPage } from '../pages/dragAndDropPage';
 
 test('Drag and Drop Test', async ({ page }) => {
   const dragAndDropPage = new DragAndDropPage(page);

@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { FormAuthenticationPage } from '../pages/FormAuthentication.page';
+import { FormAuthenticationPage } from '../pages/formAuthenticationPage';
 
 test('Form Authentication Test', async ({ page }) => {
   const formAuthPage = new FormAuthenticationPage(page);

@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { GeolocationPage } from '../pages/Geolocation.page';
+import { GeolocationPage } from '../pages/geolocationPage';
 
 test('Geolocation Test', async ({ page, context }) => {
   await context.grantPermissions(['geolocation'], { origin: 'https://the-internet.herokuapp.com' });

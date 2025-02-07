@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { DropdownPage } from '../pages/Dropdown.page';
+import { DropdownPage } from '../pages/dropdownPage';
 
 test('Dropdown Test', async ({ page }) => {
   const dropdownPage = new DropdownPage(page);

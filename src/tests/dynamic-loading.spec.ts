@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { DynamicLoadingPage } from '../pages/DynamicLoading.page';
+import { DynamicLoadingPage } from '../pages/dynamicLoadingPage';
 
 test('Dynamic Loading Test - Example 1', async ({ page }) => {
   const dynamicLoadingPage = new DynamicLoadingPage(page);

@@ -20,7 +20,7 @@ export class FileDownloadPage extends BasePage {
   async downloadFile(fileName: string) {
     const [download] = await Promise.all([
       this.page.waitForEvent('download'),
-      this.page.locator(`text=${fileName}`).click()
+      this.page.getByRole('link', { name: fileName, exact: true }).click()
     ]);
     return download;
   }

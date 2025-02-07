@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { ShiftingContentPage } from '../pages/ShiftingContent.page';
+import { ShiftingContentPage } from '../pages/shiftingContentPage';
 
 test.describe('Shifting Content Scenario', () => {
   let shiftingContent: ShiftingContentPage;

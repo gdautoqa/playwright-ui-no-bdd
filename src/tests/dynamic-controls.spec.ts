@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { DynamicControlsPage } from '../pages/DynamicControls.page';
+import { DynamicControlsPage } from '../pages/dynamicControlsPage';
 
 test.describe('Dynamic Controls Tests', () => {
   let dynamicControlsPage: DynamicControlsPage;
