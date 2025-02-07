@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { DigestAuthenticationPage } from '../pages/DigestAuthentication.page';
+import { DigestAuthenticationPage } from '../pages/digestAuthenticationPage';
 
 test.use({
   httpCredentials: {

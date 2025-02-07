@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { ContextMenuPage } from '../pages/ContextMenu.page';
+import { ContextMenuPage } from '../pages/contextMenuPage';
 
 test('Context Menu Test', async ({ page }) => {
   const contextMenuPage = new ContextMenuPage(page);

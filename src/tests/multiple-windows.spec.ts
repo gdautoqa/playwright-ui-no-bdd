@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { MultipleWindowsPage } from '../pages/MultipleWindows.page';
+import { MultipleWindowsPage } from '../pages/multipleWindowsPage';
 
 test('Multiple Windows Test', async ({ page }) => {
   const multipleWindowsPage = new MultipleWindowsPage(page);

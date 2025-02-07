@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { CheckboxesPage } from '../pages/Checkboxes.page';
+import { CheckboxesPage } from '../pages/checkboxesPage';
 
 test('Checkboxes Test', async ({ page }) => {
   const checkboxesPage = new CheckboxesPage(page);
