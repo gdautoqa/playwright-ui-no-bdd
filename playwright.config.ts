@@ -8,9 +8,9 @@ export default defineConfig({
   },
   fullyParallel: true,
   retries: 1,
-  reporter: [['html', { open: 'never' }]],
+  reporter: [['html', { open: 'never' }], ['list']],
   use: {
-    trace: 'on-first-retry',
+    trace: 'on',
     video: 'retain-on-failure',
     screenshot: 'on',
   },

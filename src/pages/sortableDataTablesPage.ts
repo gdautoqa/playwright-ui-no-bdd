@@ -1,7 +1,7 @@
 import { Page } from '@playwright/test';
 import { BasePage } from './BasePage';
 
-export default class SortableDataTablesPage extends BasePage {
+export class SortableDataTablesPage extends BasePage {
   constructor(page: Page) {
     super(page);
   }

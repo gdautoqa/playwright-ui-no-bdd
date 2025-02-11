@@ -8,7 +8,7 @@ export class AddRemoveElementsPage extends BasePage {
 
   async navigate() {
     await this.navigateTo('/');
-    await this.page.click('a:has-text("Add/Remove Elements")');
+    await this.page.getByRole('link', { name: 'Add/Remove Elements' }).click();
     await this.page.waitForLoadState('load');
   }
 
