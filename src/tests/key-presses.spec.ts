@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import KeyPressesPage from '../pages/keyPressesPage';
+import { KeyPressesPage } from '../pages/keyPressesPage';
 
 test('Key Presses Test', async ({ page }) => {
   const keyPressesPage = new KeyPressesPage(page);

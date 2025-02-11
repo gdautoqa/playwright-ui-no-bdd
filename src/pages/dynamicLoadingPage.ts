@@ -1,4 +1,4 @@
-import { Page, Locator } from '@playwright/test';
+import { Page, Locator, expect } from '@playwright/test';
 import { BasePage } from './BasePage';
 
 export class DynamicLoadingPage extends BasePage {
@@ -10,16 +10,15 @@ export class DynamicLoadingPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    this.example1Link = page.locator('text=Example 1: Element on page that is hidden');
-    this.example2Link = page.locator('text=Example 2: Element rendered after the fact');
+    this.example1Link = page.getByRole('link', { name: 'Example 1: Element on page that is hidden' });
+    this.example2Link = page.getByRole('link', { name: 'Example 2: Element rendered after the fact' });
     this.startButton = page.locator('button');
     this.helloWorldText = page.locator('text=Hello World!');
   }
 
   async goto() {
     await this.navigateTo('/');
-    await this.page.click('a:has-text("Dynamic Loading")');
-    await this.page.waitForLoadState('load');
+    await this.clickLinkByRole('Dynamic Loading');
   }
 
   async clickExample1() {
@@ -35,6 +34,6 @@ export class DynamicLoadingPage extends BasePage {
   }
 
   async waitForHelloWorld() {
-    await this.helloWorldText.waitFor({ state: 'visible', timeout: this.TIMEOUT });
+    await expect(this.helloWorldText).toBeVisible({ timeout: this.TIMEOUT });
   }
 }

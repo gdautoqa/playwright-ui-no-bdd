@@ -1,7 +1,7 @@
 import { Page, Locator } from '@playwright/test';
 import { BasePage } from './BasePage';
 
-export default class KeyPressesPage extends BasePage {
+export class KeyPressesPage extends BasePage {
   readonly input: Locator;
   readonly result: Locator;
 

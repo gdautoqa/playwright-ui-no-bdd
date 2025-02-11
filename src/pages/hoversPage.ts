@@ -1,7 +1,7 @@
 import { Page, Locator } from '@playwright/test';
 import { BasePage } from './BasePage';
 
-export default class HoversPage extends BasePage {
+export class HoversPage extends BasePage {
   readonly figures: Locator;
 
   constructor(page: Page) {
