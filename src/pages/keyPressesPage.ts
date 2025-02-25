@@ -7,7 +7,7 @@ export class KeyPressesPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    this.input = page.locator('#target');
+    this.input = page.getByRole('textbox');
     this.result = page.locator('#result');
   }
 
@@ -16,7 +16,7 @@ export class KeyPressesPage extends BasePage {
   }
 
   async clickKeyPressesLink(): Promise<void> {
-    await this.page.click('text=Key Presses');
+    await this.page.getByText('Key Presses').click();
   }
 
   async typeKey(key: string): Promise<void> {

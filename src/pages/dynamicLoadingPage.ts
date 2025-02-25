@@ -10,10 +10,14 @@ export class DynamicLoadingPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    this.example1Link = page.getByRole('link', { name: 'Example 1: Element on page that is hidden' });
-    this.example2Link = page.getByRole('link', { name: 'Example 2: Element rendered after the fact' });
-    this.startButton = page.locator('button');
-    this.helloWorldText = page.locator('text=Hello World!');
+    this.example1Link = page.getByRole('link', {
+      name: 'Example 1: Element on page that is hidden',
+    });
+    this.example2Link = page.getByRole('link', {
+      name: 'Example 2: Element rendered after the fact',
+    });
+    this.startButton = page.getByRole('button', { name: 'Start' });
+    this.helloWorldText = page.getByText('Hello World!');
   }
 
   async goto() {

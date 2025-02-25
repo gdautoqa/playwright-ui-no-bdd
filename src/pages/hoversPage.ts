@@ -14,7 +14,7 @@ export class HoversPage extends BasePage {
   }
 
   async clickHoversLink(): Promise<void> {
-    await this.page.click('text=Hovers');
+    await this.page.getByText('Hovers').click();
   }
 
   async hoverOverImage(index: number): Promise<void> {

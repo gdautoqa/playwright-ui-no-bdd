@@ -1,4 +1,4 @@
-import { Page, Locator, expect } from '@playwright/test';
+import { Page, Locator } from '@playwright/test';
 
 export class HorizontalSliderPage {
   readonly page: Page;
@@ -7,12 +7,12 @@ export class HorizontalSliderPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.slider = page.locator('input[type="range"]');
+    this.slider = page.getByRole('slider');
     this.sliderValue = page.locator('#range');
   }
 
   async navigateToHomePage(): Promise<void> {
-    await this.page.goto('https://the-internet.herokuapp.com/');
+    await this.page.goto('/');
     await this.page.getByRole('link', { name: 'Horizontal Slider' }).click();
     await this.page.waitForLoadState('load');
   }
@@ -29,7 +29,7 @@ export class HorizontalSliderPage {
     }
     if (attempts === maxAttempts && currentVal !== targetValue) {
       throw new Error(
-        `Could not achieve target slider value ${targetValue} after ${maxAttempts} attempts. Current value: ${currentVal}`
+        `Could not achieve target slider value ${targetValue} after ${maxAttempts} attempts. Current value: ${currentVal}`,
       );
     }
   }

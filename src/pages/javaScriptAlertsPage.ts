@@ -16,7 +16,7 @@ export class JavaScriptAlertsPage extends BasePage {
 
   private async handleDialogAndClick(selector: string): Promise<string> {
     return new Promise<string>(async (resolve) => {
-      this.page.once('dialog', async dialog => {
+      this.page.once('dialog', async (dialog) => {
         const message = dialog.message();
         await dialog.accept();
         resolve(message);

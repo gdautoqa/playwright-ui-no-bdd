@@ -10,6 +10,7 @@ export default defineConfig({
   retries: 1,
   reporter: [['html', { open: 'never' }], ['list']],
   use: {
+    baseURL: 'https://the-internet.herokuapp.com',
     trace: 'on',
     video: 'retain-on-failure',
     screenshot: 'on',

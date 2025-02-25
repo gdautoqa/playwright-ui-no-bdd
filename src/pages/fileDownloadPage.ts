@@ -6,7 +6,10 @@ export class FileDownloadPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    this.fileDownloadLink = page.locator('a[href="/download"]');
+    this.fileDownloadLink = page.getByRole('link', {
+      name: 'File Download',
+      exact: true,
+    });
   }
 
   async gotoHome() {
@@ -20,7 +23,7 @@ export class FileDownloadPage extends BasePage {
   async downloadFile(fileName: string) {
     const [download] = await Promise.all([
       this.page.waitForEvent('download'),
-      this.page.getByRole('link', { name: fileName, exact: true }).click()
+      this.page.getByRole('link', { name: fileName, exact: true }).click(),
     ]);
     return download;
   }

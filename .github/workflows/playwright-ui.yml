@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        browser: [Chromium, Firefox, WebKit, "Pixel 8", "iPhone 15"]
+        browser: [Chromium, Firefox, WebKit, 'Pixel 8', 'iPhone 15']
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

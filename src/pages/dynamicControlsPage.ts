@@ -21,7 +21,9 @@ export class DynamicControlsPage extends BasePage {
   }
 
   async waitForGoneMessage() {
-    await expect(this.page.getByText(DynamicControlsPage.GONE_MESSAGE)).toBeVisible();
+    await expect(
+      this.page.getByText(DynamicControlsPage.GONE_MESSAGE),
+    ).toBeVisible();
   }
 
   async clickAddButton() {
@@ -29,7 +31,9 @@ export class DynamicControlsPage extends BasePage {
   }
 
   async waitForBackMessage() {
-    await expect(this.page.getByText(DynamicControlsPage.BACK_MESSAGE)).toBeVisible();
+    await expect(
+      this.page.getByText(DynamicControlsPage.BACK_MESSAGE),
+    ).toBeVisible();
   }
 
   async clickEnableButton() {
@@ -37,7 +41,9 @@ export class DynamicControlsPage extends BasePage {
   }
 
   async waitForEnabledMessage() {
-    await expect(this.page.getByText(DynamicControlsPage.ENABLED_MESSAGE)).toBeVisible();
+    await expect(
+      this.page.getByText(DynamicControlsPage.ENABLED_MESSAGE),
+    ).toBeVisible();
   }
 
   async clickDisableButton() {
@@ -45,7 +51,9 @@ export class DynamicControlsPage extends BasePage {
   }
 
   async waitForDisabledMessage() {
-    await expect(this.page.getByText(DynamicControlsPage.DISABLED_MESSAGE)).toBeVisible();
+    await expect(
+      this.page.getByText(DynamicControlsPage.DISABLED_MESSAGE),
+    ).toBeVisible();
   }
 
   async getMessageText(): Promise<string> {
