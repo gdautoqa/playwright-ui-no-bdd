@@ -1,13 +1,13 @@
 import { Page, Locator } from '@playwright/test';
 import { BasePage } from './BasePage';
 
-export default class KeyPressesPage extends BasePage {
+export class KeyPressesPage extends BasePage {
   readonly input: Locator;
   readonly result: Locator;
 
   constructor(page: Page) {
     super(page);
-    this.input = page.locator('#target');
+    this.input = page.getByRole('textbox');
     this.result = page.locator('#result');
   }
 
@@ -16,7 +16,7 @@ export default class KeyPressesPage extends BasePage {
   }
 
   async clickKeyPressesLink(): Promise<void> {
-    await this.page.click('text=Key Presses');
+    await this.page.getByText('Key Presses').click();
   }
 
   async typeKey(key: string): Promise<void> {

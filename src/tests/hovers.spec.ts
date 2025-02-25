@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import HoversPage from '../pages/hoversPage';
+import { HoversPage } from '../pages/hoversPage';
 
 test('Hovers Scenario', async ({ page }) => {
   const hoversPage = new HoversPage(page);

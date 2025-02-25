@@ -1,7 +1,7 @@
 import { Page } from '@playwright/test';
 import { BasePage } from './BasePage';
 
-export default class JavaScriptAlertsPage extends BasePage {
+export class JavaScriptAlertsPage extends BasePage {
   constructor(page: Page) {
     super(page);
   }
@@ -11,12 +11,12 @@ export default class JavaScriptAlertsPage extends BasePage {
   }
 
   async clickJavaScriptAlertsLink(): Promise<void> {
-    await this.page.click('text=JavaScript Alerts');
+    await this.page.getByRole('link', { name: 'JavaScript Alerts' }).click();
   }
 
   private async handleDialogAndClick(selector: string): Promise<string> {
     return new Promise<string>(async (resolve) => {
-      this.page.once('dialog', async dialog => {
+      this.page.once('dialog', async (dialog) => {
         const message = dialog.message();
         await dialog.accept();
         resolve(message);

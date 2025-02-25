@@ -8,7 +8,7 @@ export class DropdownPage extends BasePage {
 
   async navigate() {
     await this.navigateTo('/');
-    await this.page.click('a:has-text("Dropdown")');
+    await this.page.getByRole('link', { name: 'Dropdown' }).click();
     await this.page.waitForLoadState('load');
   }
 

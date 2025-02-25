@@ -19,7 +19,9 @@ export class ShiftingContentPage extends BasePage {
   }
 
   async clickExample1MenuElement() {
-    await this.page.getByRole('link', { name: 'Example 1: Menu Element' }).click();
+    await this.page
+      .getByRole('link', { name: 'Example 1: Menu Element' })
+      .click();
   }
 
   async clickExample2Image() {

@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import JavaScriptAlertsPage from '../pages/javaScriptAlertsPage';
+import { JavaScriptAlertsPage } from '../pages/javaScriptAlertsPage';
 
 test('JavaScript Alerts Test', async ({ page }) => {
   const jsAlertsPage = new JavaScriptAlertsPage(page);

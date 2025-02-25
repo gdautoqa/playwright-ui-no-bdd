@@ -12,15 +12,15 @@ export class FormAuthenticationPage {
   constructor(page: Page) {
     this.page = page;
     this.formAuthLink = page.getByRole('link', { name: 'Form Authentication' });
-    this.usernameInput = page.locator('#username');
-    this.passwordInput = page.locator('#password');
-    this.loginButton = page.locator('button[type="submit"]');
+    this.usernameInput = page.getByLabel('Username');
+    this.passwordInput = page.getByLabel('Password');
+    this.loginButton = page.getByRole('button', { name: 'Login' });
     this.flashMessage = page.locator('#flash');
     this.logoutButton = page.getByRole('link', { name: 'Logout' });
   }
 
   async gotoHome() {
-    await this.page.goto('https://the-internet.herokuapp.com');
+    await this.page.goto('/');
   }
 
   async navigateToFormAuthentication() {
@@ -34,7 +34,9 @@ export class FormAuthenticationPage {
   }
 
   async assertWelcomeMessage() {
-    await expect(this.flashMessage).toContainText('You logged into a secure area!');
+    await expect(this.flashMessage).toContainText(
+      'You logged into a secure area!',
+    );
   }
 
   async logout() {

@@ -8,7 +8,7 @@ export class AddRemoveElementsPage extends BasePage {
 
   async navigate() {
     await this.navigateTo('/');
-    await this.page.click('a:has-text("Add/Remove Elements")');
+    await this.page.getByRole('link', { name: 'Add/Remove Elements' }).click();
     await this.page.waitForLoadState('load');
   }
 
@@ -17,10 +17,10 @@ export class AddRemoveElementsPage extends BasePage {
   }
 
   async countDeleteButtons(): Promise<number> {
-    return await this.page.locator('button', { hasText: 'Delete' }).count();
+    return await this.page.getByRole('button', { name: 'Delete' }).count();
   }
 
   async clickDeleteButton(index: number = 0) {
-    await this.page.locator('button', { hasText: 'Delete' }).nth(index).click();
+    await this.page.getByRole('button', { name: 'Delete' }).nth(index).click();
   }
 }

@@ -12,7 +12,7 @@ export class DragAndDropPage extends BasePage {
     await this.page.waitForLoadState('load');
   }
 
-  async getColumnHeaders(): Promise<{ columnA: string, columnB: string }> {
+  async getColumnHeaders(): Promise<{ columnA: string; columnB: string }> {
     const headerA = this.page.locator('#column-a header');
     const headerB = this.page.locator('#column-b header');
     await headerA.waitFor({ state: 'visible' });

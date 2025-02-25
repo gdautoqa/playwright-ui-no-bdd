@@ -11,14 +11,14 @@ export class GeolocationPage {
   constructor(page: Page) {
     this.page = page;
     this.geolocationLink = page.getByRole('link', { name: 'Geolocation' });
-    this.whereAmIButton = page.locator('text=Where am i');
-    this.latitudeInfo = page.locator('text=Latitude:');
-    this.longitudeInfo = page.locator('text=Longitude:');
+    this.whereAmIButton = page.getByText('Where am i');
+    this.latitudeInfo = page.getByText('Latitude:');
+    this.longitudeInfo = page.getByText('Longitude:');
     this.seeOnGoogleLink = page.getByRole('link', { name: 'See it on Google' });
   }
 
   async gotoHome() {
-    await this.page.goto('https://the-internet.herokuapp.com');
+    await this.page.goto('/');
   }
 
   async navigateToGeolocation() {
@@ -38,10 +38,18 @@ export class GeolocationPage {
 
     const coordinateRegex = /-?\d+(\.\d+)?/;
 
-    if (!latitudeText || !latitudeText.match(new RegExp(`Latitude:\\s*${coordinateRegex.source}`))) {
+    if (
+      !latitudeText ||
+      !latitudeText.match(new RegExp(`Latitude:\\s*${coordinateRegex.source}`))
+    ) {
       throw new Error('Latitude information is not displayed correctly');
     }
-    if (!longitudeText || !longitudeText.match(new RegExp(`Longitude:\\s*${coordinateRegex.source}`))) {
+    if (
+      !longitudeText ||
+      !longitudeText.match(
+        new RegExp(`Longitude:\\s*${coordinateRegex.source}`),
+      )
+    ) {
       throw new Error('Longitude information is not displayed correctly');
     }
   }

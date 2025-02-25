@@ -9,9 +9,9 @@ export class FileUploadPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    this.fileUploadLink = page.locator('a:has-text("File Upload")');
+    this.fileUploadLink = page.getByRole('link', { name: 'File Upload' });
     this.fileInput = page.locator('#file-upload');
-    this.uploadButton = page.locator('#file-submit');
+    this.uploadButton = page.getByRole('button', { name: 'Upload' });
     this.uploadedFileNameLocator = page.locator('#uploaded-files');
   }
 

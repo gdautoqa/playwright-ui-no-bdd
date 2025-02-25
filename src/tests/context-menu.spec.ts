@@ -14,7 +14,7 @@ test('Context Menu Test', async ({ page }) => {
       resolve(message);
     });
   });
-  
+
   await contextMenuPage.triggerContextMenu();
   const dialogMessage = await dialogPromise;
   expect(dialogMessage).toBe('You selected a context menu');

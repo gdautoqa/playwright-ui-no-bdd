@@ -7,12 +7,12 @@ test('Add and Remove Elements', async ({ page }) => {
 
   await addRemovePage.clickAddElement();
   await addRemovePage.clickAddElement();
-  
+
   const deleteCount = await addRemovePage.countDeleteButtons();
   expect(deleteCount).toBe(2);
 
   await addRemovePage.clickDeleteButton();
-  
+
   const updatedCount = await addRemovePage.countDeleteButtons();
   expect(updatedCount).toBe(1);
 });

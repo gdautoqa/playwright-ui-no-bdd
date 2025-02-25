@@ -7,7 +7,7 @@ export class CheckboxesPage extends BasePage {
   }
 
   private get checkboxes() {
-    return this.page.locator('form#checkboxes input[type="checkbox"]');
+    return this.page.locator('form#checkboxes').getByRole('checkbox');
   }
 
   async navigate() {

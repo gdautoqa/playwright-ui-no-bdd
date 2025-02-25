@@ -7,7 +7,7 @@ test('Dynamic Loading Test - Example 1', async ({ page }) => {
   await dynamicLoadingPage.clickExample1();
   await dynamicLoadingPage.clickStart();
   await dynamicLoadingPage.waitForHelloWorld();
-  await expect(page.locator('text=Hello World!')).toBeVisible();
+  await expect(page.getByText('Hello World!')).toBeVisible();
 });
 
 test('Dynamic Loading Test - Example 2', async ({ page }) => {
@@ -16,5 +16,5 @@ test('Dynamic Loading Test - Example 2', async ({ page }) => {
   await dynamicLoadingPage.clickExample2();
   await dynamicLoadingPage.clickStart();
   await dynamicLoadingPage.waitForHelloWorld();
-  await expect(page.locator('text=Hello World!')).toBeVisible();
+  await expect(page.getByText('Hello World!')).toBeVisible();
 });

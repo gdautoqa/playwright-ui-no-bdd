@@ -17,7 +17,7 @@ export class MultipleWindowsPage extends BasePage {
   async clickClickHere() {
     const [newPage] = await Promise.all([
       this.page.waitForEvent('popup'),
-      this.page.getByRole('link', { name: 'Click Here' }).click()
+      this.page.getByRole('link', { name: 'Click Here' }).click(),
     ]);
     await newPage.waitForLoadState('load');
     return newPage;

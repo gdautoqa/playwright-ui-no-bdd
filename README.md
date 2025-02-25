@@ -20,7 +20,7 @@ This repository contains a series of UI automation tests built with Playwright. 
 
 ### Prerequisites
 
-- Node.js 
+- Node.js
 - npm or yarn
 
 ### Installation

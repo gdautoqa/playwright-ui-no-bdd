@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import SortableDataTablesPage from '../pages/sortableDataTablesPage';
+import { SortableDataTablesPage } from '../pages/sortableDataTablesPage';
 
 test('Sortable Data Tables Test', async ({ page }) => {
   const tablesPage = new SortableDataTablesPage(page);

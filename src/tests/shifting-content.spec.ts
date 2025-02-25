@@ -13,11 +13,11 @@ test.describe('Shifting Content Scenario', () => {
     await shiftingContent.navigateToShiftingContent();
 
     await shiftingContent.clickExample1MenuElement();
-    
-    const menuItems = page.locator('ul li');
+
+    const menuItems = page.getByRole('listitem');
     const menuCount = await menuItems.count();
     expect(menuCount).toBeGreaterThan(0);
-    
+
     for (let i = 0; i < menuCount; i++) {
       const menuItem = menuItems.nth(i);
       await menuItem.hover();
@@ -27,7 +27,7 @@ test.describe('Shifting Content Scenario', () => {
     await page.goBack();
 
     await shiftingContent.clickExample2Image();
-    
+
     const image = page.locator('img.shift');
 
     await expect(image.first()).toBeVisible();
