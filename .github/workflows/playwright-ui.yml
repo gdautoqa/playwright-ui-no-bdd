@@ -21,14 +21,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run tests in Playwright Docker container
-        uses: addnab/docker-run-action@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          image: mcr.microsoft.com/playwright:v1.51.1-noble
-          options: --rm
-          run: |
-            npm install
-            npx playwright test --project="${{ matrix.browser }}"
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: Run tests
+        run: npx playwright test --project="${{ matrix.browser }}"
 
       - name: Upload Playwright Report
         uses: actions/upload-artifact@v4
@@ -36,3 +41,6 @@ jobs:
           name: playwright-report-${{ matrix.browser }}
           path: playwright-report/
           if-no-files-found: warn
+          compression-level: 6
+          overwrite: false
+          include-hidden-files: false
