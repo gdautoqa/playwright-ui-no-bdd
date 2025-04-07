@@ -6,15 +6,15 @@ export default defineConfig({
   expect: {
     timeout: 5000,
   },
-  captureGitInfo: { diff: true},
+  captureGitInfo: { diff: true },
   fullyParallel: true,
   retries: 1,
   reporter: [['html', { open: 'never' }], ['list']],
   use: {
     baseURL: 'https://the-internet.herokuapp.com',
-    trace: 'on',
+    trace: 'retain-on-failure',
     video: 'retain-on-failure',
-    screenshot: 'on',
+    screenshot: 'only-on-failure',
   },
   projects: [
     {

@@ -19,22 +19,22 @@
   "description": "playwright-ui-no-bdd",
   "dependencies": {
     "axe-core": "^4.10.3",
-    "axios": "^1.8.2",
+    "axios": "^1.8.4",
     "dotenv": "^16.4.7",
-    "playwright": "^1.51.0",
+    "playwright": "^1.51.1",
     "prettier": "^3.5.3",
     "test": "^3.3.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
-    "@playwright/test": "^1.51.0",
-    "@types/node": "^22.13.9",
-    "@typescript-eslint/eslint-plugin": "^8.26.0",
-    "@typescript-eslint/parser": "^8.26.0",
-    "eslint": "^9.21.0",
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.14.0",
+    "@typescript-eslint/eslint-plugin": "^8.29.0",
+    "@typescript-eslint/parser": "^8.29.0",
+    "eslint": "^9.24.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-playwright": "^2.2.0",
-    "eslint-plugin-prettier": "^5.2.3"
+    "eslint-plugin-prettier": "^5.2.6"
   }
 }
